@@ -1,13 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "../pages/Home";
+
 import GlobalStyle from '../styles/GlobalStyle';
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle/>
-      안녕 이건 테스트용 텍스트임
-    </>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
