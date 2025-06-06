@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -9,6 +10,11 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.colors.bgColor};
+
+  position: fixed;
+  top: 0; left: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: ${(props) => (props.$isNavVisible ? 'translateY(0)' : 'translateY(-50px)')};
 `;
 
 const LogoWrapper = styled.div`
@@ -42,9 +48,57 @@ const MenuButton = styled.button`
 `;
 
 const Navbar = ({ theme }) => {
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  const homeNavShowDelay = 3000;
+
+  const handleNavVisible = () => {
+    const currScrollY = window.scrollY;
+
+    console.log(currScrollY);
+    
+    // if scroll down : up
+    currScrollY > prevScrollY ? setIsNavVisible(false) : setIsNavVisible(true);
+
+    setPrevScrollY(currScrollY);
+  }
+
+  // check if this is Home
+  useEffect(() => {
+    if (window.location.pathname === '/') {
+      setIsNavVisible(false);
+      setTimeout(() => {
+        setIsNavVisible(true);
+      }, homeNavShowDelay);
+    } else setIsNavVisible(true);
+  }, [window.location.pathname]);
+
+  // handle visiblity by scrollY
+  useEffect(() => {
+    const handleScroll = () => {
+      handleNavVisible();
+    };
+
+    let throttleTimeout;
+    const throttle = () => {
+      if (!throttleTimeout) {
+        throttleTimeout = setTimeout(() => {
+          handleScroll();
+          throttleTimeout = null;
+        }, 100);  // handle scroll every 100ms
+      }
+    };
+
+    window.addEventListener('scroll', throttle);
+
+    return () => {
+      window.removeEventListener('scroll', throttle);
+    }
+  }, [prevScrollY]);
 
   return (
-    <Container>
+    <Container $isNavVisible={isNavVisible}>
       <LogoWrapper>
         <Link to="/">
           <LogoImage src={

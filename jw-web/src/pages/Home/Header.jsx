@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-const Container = () => {
-
-};
+const Container = styled.div`
+  width: 100vh;
+  padding: 70px 30px 0;
+`;
 
 const Title = styled.h1`
   font-size: large;
@@ -16,7 +17,9 @@ const Title = styled.h1`
 
 const Header = () => {
   return (
+    <Container>
       <Title>아이디어를 현실로, 최고의 경험을 담아서.</Title>
+    </Container>
     );
 };
 

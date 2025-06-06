@@ -1,8 +1,13 @@
 import Header from "./Header";
+import Background from "../../shared/styles/Background";
+import Navbar from "../../shared/styles/Navbar";
 
-const Home = () => {
+const Home = ({ theme, setTheme }) => {
   return (
-      <Header/>
+      <Background>
+        <Navbar theme={theme}></Navbar>
+        <Header/>
+      </Background>
     );
 }
 
