@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Container = styled.div`
@@ -51,6 +51,7 @@ const Navbar = ({ theme }) => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
+  const location = useLocation();
   const homeNavShowDelay = 3000;
 
   const handleNavVisible = () => {
@@ -63,16 +64,28 @@ const Navbar = ({ theme }) => {
 
     setPrevScrollY(currScrollY);
   }
+  
 
-  // check if this is Home
+ 
   useEffect(() => {
-    if (window.location.pathname === '/') {
-      setIsNavVisible(false);
-      setTimeout(() => {
+    if (location.pathname === '/') {  // check if this is Home
+      if (!sessionStorage.getItem('hasVisited')) {
+        setIsNavVisible(false);
+
+        console.log(sessionStorage.getItem('hasVisited'));
+        console.log(location.pathname);
+        
+        setTimeout(() => {
+          setIsNavVisible(true);
+          sessionStorage.setItem('hasVisited', 'true');
+        }, homeNavShowDelay);
+      } else {
         setIsNavVisible(true);
-      }, homeNavShowDelay);
-    } else setIsNavVisible(true);
-  }, [window.location.pathname]);
+      }
+    } else {
+      setIsNavVisible(true);
+    }
+  }, [location.pathname]);
 
   // handle visiblity by scrollY
   useEffect(() => {
@@ -109,6 +122,9 @@ const Navbar = ({ theme }) => {
         </Link>
       </LogoWrapper>
       <MenuWrapper>
+        <Link to="/">
+          <MenuButton>Home</MenuButton>
+        </Link>
         <Link to="/about">
           <MenuButton>About</MenuButton>
         </Link>
