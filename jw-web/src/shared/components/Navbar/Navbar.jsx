@@ -2,10 +2,7 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { ToggleBtn, ToggleWrapper } from "../Toggle";
-
 const Container = styled.div`
-  width: 100vw;
   height: 50px;
   border-bottom: 0.1px #eeede7 solid;
   display: flex;
@@ -15,7 +12,7 @@ const Container = styled.div`
   color: #0e1111;
 
   position: fixed;
-  top: 0; left: 0;
+  top: 0; left: 0; right: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${(props) => (props.$isNavVisible ? 'translateY(0)' : 'translateY(-50px)')};
 `;
@@ -50,6 +47,22 @@ const MoveBtn = styled.button`
   }
 `;
 
+const ToggleBtn = styled.button`
+  margin-right: 15px;
+  width: 23px;
+  aspect-ratio: 1;
+  color: #0e1111;
+  background-image: url('/images/translate.png');
+  border: none;
+  background-size: cover;
+  background-position: center; /* 배경 이미지 위치 조정 */
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const Navbar = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
@@ -59,8 +72,6 @@ const Navbar = () => {
 
   const handleNavVisible = () => {
     const currScrollY = window.scrollY;
-
-    console.log(currScrollY);
     
     // if scroll down : up
     currScrollY > prevScrollY ? setIsNavVisible(false) : setIsNavVisible(true);
@@ -131,11 +142,7 @@ const Navbar = () => {
           <MoveBtn>Showcase</MoveBtn>
         </Link>
       </MoveWrapper>
-      <ToggleWrapper>
-        <ToggleBtn>
-          한
-        </ToggleBtn>
-      </ToggleWrapper>
+      <ToggleBtn/>
     </Container>
   );
 }
