@@ -2,14 +2,17 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { ToggleBtn, ToggleWrapper } from "../Toggle";
+
 const Container = styled.div`
   width: 100vw;
   height: 50px;
-  border-bottom: 0.1px ${(props) => props.theme.colors.dividerColor} solid;
+  border-bottom: 0.1px #eeede7 solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.bgColor};
+  background-color: #FAF9F6;
+  color: #0e1111;
 
   position: fixed;
   top: 0; left: 0;
@@ -30,24 +33,24 @@ const LogoImage = styled.img`
   object-fit: contain;
 `;
 
-const MenuWrapper = styled.div`
-  margin-right: 15px;
+const MoveWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const MenuButton = styled.button`
+const MoveBtn = styled.button`
   font-size: small;
   font-weight: 400;
   background: transparent;
   border: none;
+  color: #0e1111;
   &:hover {
     cursor: pointer;
   }
 `;
 
-const Navbar = ({ theme }) => {
+const Navbar = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
@@ -114,24 +117,25 @@ const Navbar = ({ theme }) => {
     <Container $isNavVisible={isNavVisible}>
       <LogoWrapper>
         <Link to="/">
-          <LogoImage src={
-            theme === 'light' 
-                ? '/images/logo_black.webp' 
-                : '/images/logo_white.webp'
-          } alt="logo"/>
+          <LogoImage src='/images/logo_black.webp' alt="logo"/>
         </Link>
       </LogoWrapper>
-      <MenuWrapper>
+      <MoveWrapper>
         <Link to="/">
-          <MenuButton>Home</MenuButton>
+          <MoveBtn>Home</MoveBtn>
         </Link>
         <Link to="/about">
-          <MenuButton>About</MenuButton>
+          <MoveBtn>About</MoveBtn>
         </Link>
         <Link to="/showcase">
-          <MenuButton>Showcase</MenuButton>
+          <MoveBtn>Showcase</MoveBtn>
         </Link>
-      </MenuWrapper>
+      </MoveWrapper>
+      <ToggleWrapper>
+        <ToggleBtn>
+          한
+        </ToggleBtn>
+      </ToggleWrapper>
     </Container>
   );
 }
