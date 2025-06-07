@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 
 const Container = styled.div`
   height: 50px;
@@ -64,9 +66,10 @@ const ToggleBtn = styled.button`
 `;
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
-
+  const [language, setLanguage] = useState(i18n.language);  // current lang
   const location = useLocation();
   const homeNavShowDelay = 3000;
 
@@ -77,6 +80,12 @@ const Navbar = () => {
     currScrollY > prevScrollY ? setIsNavVisible(false) : setIsNavVisible(true);
 
     setPrevScrollY(currScrollY);
+  }
+
+  const toggleLanguage = (lang) => {
+    const newLanguage = language === 'ko' ? 'en' : 'ko';
+    setLanguage(newLanguage);  // update lang-state
+    i18n.changeLanguage(newLanguage);  // update lang
   }
   
 
@@ -133,16 +142,16 @@ const Navbar = () => {
       </LogoWrapper>
       <MoveWrapper>
         <Link to="/">
-          <MoveBtn>Home</MoveBtn>
+          <MoveBtn>{t('menu_home')}</MoveBtn>
         </Link>
         <Link to="/about">
-          <MoveBtn>About</MoveBtn>
+          <MoveBtn>{t('menu_about')}</MoveBtn>
         </Link>
         <Link to="/showcase">
-          <MoveBtn>Showcase</MoveBtn>
+          <MoveBtn>{t('menu_showcase')}</MoveBtn>
         </Link>
       </MoveWrapper>
-      <ToggleBtn/>
+      <ToggleBtn onClick={toggleLanguage}/>
     </Container>
   );
 }
