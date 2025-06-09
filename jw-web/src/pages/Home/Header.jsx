@@ -1,5 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
+import i18n from "../../shared/i18n";
+
+
+import { media } from '../../shared/styles/mediaQuery';
 
 const moveUpToAppear = keyframes`
   0% {
@@ -13,8 +17,14 @@ const moveUpToAppear = keyframes`
 `;
 
 const Container = styled.div`
-  width: 100vh;
-  padding: 150px 50px 0;
+  /* width: 100%; */
+  padding: 150px 0 0 50px;
+
+  ${media.mobile`
+    padding: 150px 0 0 0;
+    display: flex;
+    justify-content: center;
+  `}
 `;
 
 const Title = styled.h1`
@@ -23,12 +33,16 @@ const Title = styled.h1`
   color: #0e1111;
   line-height: 120%;
   opacity: 0;
+  display: inline-block;
   animation: ${moveUpToAppear} .8s cubic-bezier(.46,-0.04,.48,1) forwards;
   animation-delay: .2s;
+
+  ${({ $currLang }) => media.mobile`
+    font-size: ${$currLang === 'en' ? 'x-large' : 'xx-large'};
+  `}
 `;
 
 const GText = styled.p`
-  font-size: xxx-large;
   font-weight: 700;
   background: linear-gradient(to right,
     ${(props => props.firstColor || '#412df5')}, 
@@ -41,10 +55,13 @@ const GText = styled.p`
 
 const Header = () => {
   const { t } = useTranslation();
+  const currLang = i18n.language;
 
   return (
     <Container>
-        <Title><GText>{t('title_1')}</GText>{t('title_2')}<br/>{t('title_3')}</Title>
+      <div>
+        <Title $currLang={currLang}><GText>{t('title_1')}</GText>{t('title_2')}<br/>{t('title_3')}</Title>
+      </div>
     </Container>
     );
 };
