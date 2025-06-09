@@ -6,7 +6,7 @@ import About from "../pages/About";
 import Showcase from "../pages/Showcase";
 import GlobalStyle from '../shared/styles/GlobalStyle';
 
-import Navbar from "../shared/components/Navbar/Navbar";
+import Navbar from "../widgets/Navbar";
 
 
 function App() {
