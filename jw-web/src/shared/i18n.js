@@ -25,12 +25,15 @@ const resources = {
   }
 };
 
+const currLang = localStorage.getItem('newLangJW') || 'ko';
+const anotherLang = currLang === 'ko' ? 'en' : 'ko';
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'ko',
-    fallbackLng: 'en',
+    lng: currLang,
+    fallbackLng: anotherLang,
     interpolation: {
       escapeValue: false
     }
