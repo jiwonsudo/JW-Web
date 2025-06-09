@@ -10,9 +10,9 @@ export const useLanguage = () => {
   }, [language, i18n]);
 
   const toggleLanguage = () => {
-    const newLangJW = language === 'ko' ? 'en' : 'ko';
-    setLanguage(newLangJW);
-    localStorage.setItem('lang', newLangJW);
+    const newLang = language === 'ko' ? 'en' : 'ko';
+    setLanguage(newLang);
+    localStorage.setItem('newLangJW', newLang);
   };
 
   return { language, toggleLanguage };
