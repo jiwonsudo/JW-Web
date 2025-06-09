@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n";
 
 const Container = styled.div`
   height: 50px;
@@ -12,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   background-color: #FAF9F6;
   color: #0e1111;
+  z-index: 2;
 
   position: fixed;
   top: 0; left: 0; right: 0;
