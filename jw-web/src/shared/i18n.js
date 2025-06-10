@@ -25,7 +25,7 @@ const resources = {
   }
 };
 
-const currLang = localStorage.getItem('newLangJW') || 'ko';
+const currLang = localStorage.getItem('setLang_JW') || 'ko';
 const anotherLang = currLang === 'ko' ? 'en' : 'ko';
 
 i18n
