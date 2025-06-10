@@ -6,7 +6,7 @@ import About from "../pages/About";
 import Showcase from "../pages/Showcase";
 import GlobalStyle from '../shared/styles/GlobalStyle';
 
-import Navbar from "../widgets/Navbar";
+import Header from "../widgets/Header";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyle/>
-      <Navbar/>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>

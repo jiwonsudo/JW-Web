@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const MenuWrapper = styled.div`
+const Navbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-const MenuBtn = styled.button`
+const NavBtn = styled.button`
   font-size: small;
   font-weight: 400;
   background: transparent;
@@ -17,4 +17,4 @@ const MenuBtn = styled.button`
   }
 `;
 
-export { MenuBtn, MenuWrapper };
+export { NavBtn, Navbar };

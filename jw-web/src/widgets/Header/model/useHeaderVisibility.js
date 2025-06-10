@@ -1,23 +1,23 @@
 import { useEffect, useState } from 'react';
 
-export const useNavbarVisibility = (pathname, delay = 3000) => {
-  const [isNavVisible, setIsNavVisible] = useState(false);
+export const useHeaderVisibility = (pathname, delay = 3000) => {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
   // 첫 방문 시 홈에서 3초 후 보여주기
   useEffect(() => {
     if (pathname === '/') {
       if (!sessionStorage.getItem('hasVisited')) {
-        setIsNavVisible(false);
+        setIsHeaderVisible(false);
         setTimeout(() => {
-          setIsNavVisible(true);
+          setIsHeaderVisible(true);
           sessionStorage.setItem('hasVisited', 'true');
         }, delay);
       } else {
-        setIsNavVisible(true);
+        setIsHeaderVisible(true);
       }
     } else {
-      setIsNavVisible(true);
+      setIsHeaderVisible(true);
     }
   }, [pathname, delay]);
 
@@ -25,7 +25,7 @@ export const useNavbarVisibility = (pathname, delay = 3000) => {
   useEffect(() => {
     const handleScroll = () => {
       const curr = window.scrollY;
-      setIsNavVisible(curr < prevScrollY);
+      setIsHeaderVisible(curr < prevScrollY);
       setPrevScrollY(curr);
     };
 
@@ -43,5 +43,5 @@ export const useNavbarVisibility = (pathname, delay = 3000) => {
     return () => window.removeEventListener('scroll', throttled);
   }, [prevScrollY]);
 
-  return isNavVisible;
+  return isHeaderVisible;
 };

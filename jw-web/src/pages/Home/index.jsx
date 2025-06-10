@@ -1,11 +1,11 @@
 import Background from "../../shared/styles/Background";
 
-import Header from "./Header";
+import Hero from "./Hero";
 
 const Home = () => {
   return (
       <Background>
-        <Header/>
+        <Hero/>
       </Background>
     );
 }

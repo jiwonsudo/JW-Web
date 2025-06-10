@@ -2,16 +2,16 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Container } from "./ui/Container";
-import { MenuBtn, MenuWrapper } from "./ui/MenuBtns";
+import { NavBtn, Navbar } from "./ui/Navbar";
 import { LogoImage, LogoWrapper } from "./ui/Logo";
 
-import { useNavbarVisibility } from './model/useNavbarVisibility';
+import { useHeaderVisibility } from './model/useHeaderVisibility';
 import { LanguageToggleBtn } from '../../features/language/ui/LanguageToggleBtn';
 
-const Navbar = () => {
+const Header = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const isNavVisible = useNavbarVisibility(location.pathname);
+  const isNavVisible = useHeaderVisibility(location.pathname);
 
   return (
     <Container $isNavVisible={isNavVisible}>
@@ -21,15 +21,15 @@ const Navbar = () => {
         </Link>
       </LogoWrapper>
 
-      <MenuWrapper>
-        <Link to="/"><MenuBtn>{t('menu_home')}</MenuBtn></Link>
-        <Link to="/about"><MenuBtn>{t('menu_about')}</MenuBtn></Link>
-        <Link to="/showcase"><MenuBtn>{t('menu_showcase')}</MenuBtn></Link>
-      </MenuWrapper>
+      <Navbar>
+        <Link to="/"><NavBtn>{t('nav_home')}</NavBtn></Link>
+        <Link to="/about"><NavBtn>{t('nav_about')}</NavBtn></Link>
+        <Link to="/showcase"><NavBtn>{t('nav_showcase')}</NavBtn></Link>
+      </Navbar>
 
       <LanguageToggleBtn />
     </Container>
   );
 };
 
-export default Navbar;
+export default Header;
