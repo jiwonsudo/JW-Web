@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   height: 50px;
   border-bottom: 0.1px #eeede7 solid;
   display: flex;
@@ -15,5 +15,3 @@ const Container = styled.div`
   transition: transform 0.3s ease-in-out;
   transform: ${(props) => (props.$isNavVisible ? 'translateY(0)' : 'translateY(-50px)')};
 `;
-
-export { Container };
