@@ -1,9 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
-import i18n from "../../shared/i18n";
+import i18n from "../../../shared/i18n";
 
 
-import { media } from '../../shared/styles/mediaQuery';
+import { media } from '../../../shared/styles/mediaQuery';
 
 const moveUpToAppear = keyframes`
   0% {
@@ -53,7 +53,7 @@ const GText = styled.p`
   display: inline;
 `;
 
-const Header = () => {
+export const Hero = () => {
   const { t } = useTranslation();
   const currLang = i18n.language;
 
@@ -65,5 +65,3 @@ const Header = () => {
     </Container>
     );
 };
-
-export default Header;
