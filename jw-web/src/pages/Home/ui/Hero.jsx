@@ -2,26 +2,16 @@ import styled, { keyframes } from "styled-components";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../shared/i18n";
 
-
 import { media } from '../../../shared/styles/mediaQuery';
 
-const moveUpToAppear = keyframes`
-  0% {
-    transform: translateY(30%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
+import { moveUpToAppear } from "./moveUpToAppear";
 
 const Container = styled.div`
   /* width: 100%; */
-  padding: 150px 0 0 50px;
+  padding: 150px 0 120px 50px;
 
   ${media.mobile`
-    padding: 150px 0 0 0;
+    padding: 150px 0 100px 0;
     display: flex;
     justify-content: center;
   `}
