@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   /* Pretendard Dynamic Subset Web font */
   @font-face {
     font-family: 'Pretendard';
@@ -76,5 +76,3 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 `;
-
-export default GlobalStyle;

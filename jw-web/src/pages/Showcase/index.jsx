@@ -1,10 +1,8 @@
-import Background from "../../shared/styles/Background";
+import { Background } from "../../shared/styles/Background";
 
-const Showcase = () => {
+export const Showcase = () => {
   return (
       <Background>
       </Background>
     );
 }
-
-export default Showcase;

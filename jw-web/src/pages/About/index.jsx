@@ -1,10 +1,8 @@
-import Background from "../../shared/styles/Background";
+import { Background } from "../../shared/styles/Background";
 
-const About = () => {
+export const About = () => {
   return (
       <Background>
       </Background>
     );
 }
-
-export default About;

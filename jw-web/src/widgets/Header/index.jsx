@@ -8,7 +8,7 @@ import { LogoImage, LogoWrapper } from "./ui/Logo";
 import { useHeaderVisibility } from './model/useHeaderVisibility';
 import { LanguageToggleBtn } from '../../features/language/ui/LanguageToggleBtn';
 
-const Header = () => {
+export const Header = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const isNavVisible = useHeaderVisibility(location.pathname);
@@ -31,5 +31,3 @@ const Header = () => {
     </Container>
   );
 };
-
-export default Header;

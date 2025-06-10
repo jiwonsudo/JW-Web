@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import '../shared/i18n';
 
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Showcase from "../pages/Showcase";
-import GlobalStyle from '../shared/styles/GlobalStyle';
+import { Home } from "../pages/Home";
+import { About } from "../pages/About";
+import { Showcase } from "../pages/Showcase";
+import { GlobalStyle } from '../shared/styles/GlobalStyle';
 
-import Header from "../widgets/Header";
+import { Header } from "../widgets/Header";
 
 
 function App() {

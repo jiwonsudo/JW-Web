@@ -1,13 +1,13 @@
-import Background from "../../shared/styles/Background";
+import { Background } from "../../shared/styles/Background";
 
-import Hero from "./Hero";
+import { Hero } from "./ui/Hero";
+import { InfoPreview } from './ui/InfoPreview';
 
-const Home = () => {
+export const Home = () => {
   return (
       <Background>
         <Hero/>
+        <InfoPreview/>
       </Background>
     );
 }
-
-export default Home;
