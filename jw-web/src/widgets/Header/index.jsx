@@ -6,7 +6,7 @@ import { NavBtn, Navbar } from "./ui/Navbar";
 import { LogoImage, LogoWrapper } from "./ui/Logo";
 
 import { useHeaderVisibility } from './model/useHeaderVisibility';
-import { LanguageToggleBtn } from '../../features/language/ui/LanguageToggleBtn';
+import { LanguageToggleBtn } from './ui/LanguageToggleBtn';
 
 export const Header = () => {
   const { t } = useTranslation();

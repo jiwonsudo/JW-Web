@@ -6,7 +6,7 @@ const ToggleBtn = styled.button`
   width: 23px;
   aspect-ratio: 1;
   color: #0e1111;
-  background-image: url('/images/translate.png');
+  background-image: url('/images/translate.webp');
   border: none;
   background-size: cover;
   background-position: center; /* 배경 이미지 위치 조정 */
