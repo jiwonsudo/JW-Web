@@ -24,7 +24,8 @@ const InfoCardWrapper = styled.div`
 const InfoCard = styled.div`
   width: calc((100% - (${INFOCARD_GAP}px * 2)) / 3);
   aspect-ratio: 1 / 1.6;
-  background: url(${(props) => props.$url});
+  background: url(${(props) => props.$url}) center;
+  background-size: cover;
   border-radius: 20px;
   opacity: 0;
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
@@ -44,9 +45,9 @@ const InfoCard = styled.div`
 export const InfoPreview = () => {
   return (
     <InfoCardWrapper>
-      <InfoCard $delay='.2s' $url='/images/profile_image.webp'/>
-      <InfoCard $delay='.3s' $url='/images/profile_image.webp'/>
-      <InfoCard $delay='.4s' $url='/images/profile_image.webp'/>
+      <InfoCard $delay='.2s' $url='/images/info-preview/projects.webp'/>
+      <InfoCard $delay='.3s' $url='/images/info-preview/skill_set.webp'/>
+      <InfoCard $delay='.4s' $url='/images/info-preview/core_values.webp'/>
     </InfoCardWrapper>
   );
 }
