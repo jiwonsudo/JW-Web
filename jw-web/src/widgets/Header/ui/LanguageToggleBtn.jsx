@@ -3,10 +3,10 @@ import { useLanguage } from "../model/useLanguage";
 
 const ToggleBtn = styled.button`
   margin-right: 15px;
-  width: 23px;
+  width: 20px;
   aspect-ratio: 1;
   color: #0e1111;
-  background-image: url('/images/translate.webp');
+  background-image: url('/images/header/language_toggle.webp');
   border: none;
   background-size: cover;
   background-position: center; /* 배경 이미지 위치 조정 */

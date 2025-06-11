@@ -17,7 +17,7 @@ export const Header = () => {
     <Container $isNavVisible={isNavVisible}>
       <LogoWrapper>
         <Link to="/">
-          <LogoImage src='/images/logo_black.webp' alt="logo" />
+          <LogoImage src='/images/header/logo_black.webp' alt="logo" />
         </Link>
       </LogoWrapper>
 
