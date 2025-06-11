@@ -5,8 +5,8 @@ export const resources = {
       nav_about: '프로필',
       nav_showcase: '쇼케이스',
       title_1: '정보는 명료하게.',
-      title_2: '경험은',
-      title_3: ' 아름답게.'
+      title_2: '경험',
+      title_3: '은 아름답게.'
 
     }
   },
