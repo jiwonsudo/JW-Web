@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import i18n from "../../../shared/i18n";
+import i18n from "../../../features/language/i18n";
 
 import { media } from '../../../shared/styles/mediaQuery';
 
@@ -49,7 +49,7 @@ export const Hero = () => {
   return (
     <Container>
       <div>
-        <Title $currLang={currLang}><GText>{t('title_1')}</GText>{t('title_2')}<br/>{t('title_3')}</Title>
+        <Title $currLang={currLang}>{t('title_1')}<br/><GText>{t('title_2')}</GText>{t('title_3')}</Title>
       </div>
     </Container>
     );
