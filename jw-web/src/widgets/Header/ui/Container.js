@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: #FAF9F6;
   color: #0e1111;
-  z-index: 2;
+  z-index: 10;
 
   position: fixed;
   top: 0; left: 0; right: 0;
