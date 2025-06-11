@@ -20,5 +20,5 @@ const ToggleBtn = styled.button`
 export const LanguageToggleBtn = () => {
   const { toggleLanguage } = useLanguage();
 
-  return <ToggleBtn onClick={toggleLanguage} />;
+  return <ToggleBtn onClick={toggleLanguage} aria-label="언어 선택 / Choose Language"/>;
 };
