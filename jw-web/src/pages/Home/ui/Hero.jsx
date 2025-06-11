@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../shared/i18n";
 
@@ -22,10 +22,9 @@ const Title = styled.h1`
   font-weight: 700;
   color: #0e1111;
   line-height: 120%;
-  opacity: 0;
   display: inline-block;
-  animation: ${moveUpToAppear} .8s cubic-bezier(.46,-0.04,.48,1) forwards;
-  animation-delay: .2s;
+  opacity: 0;
+  animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
 
   ${({ $currLang }) => media.mobile`
     font-size: ${$currLang === 'en' ? 'x-large' : 'xx-large'};

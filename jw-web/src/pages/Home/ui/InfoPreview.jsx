@@ -24,10 +24,11 @@ const InfoCardWrapper = styled.div`
 const InfoCard = styled.div`
   width: calc((100% - (${INFOCARD_GAP}px * 2)) / 3);
   aspect-ratio: 1 / 1.6;
-  background-color: pink; /* TODO: delete after Test */
+  background: url(${(props) => props.$url});
   border-radius: 20px;
-  animation: ${moveUpToAppear} .8s cubic-bezier(.46,-0.04,.48,1) forwards;
-  animation-delay: ${(props) => props.delay ? delay : '.2s'};
+  opacity: 0;
+  animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
+  animation-delay: ${(props) => props.$delay || '0'};
 
   ${media.mobile`
     width: 100%;
@@ -43,9 +44,9 @@ const InfoCard = styled.div`
 export const InfoPreview = () => {
   return (
     <InfoCardWrapper>
-      <InfoCard/>
-      <InfoCard/>
-      <InfoCard/>
+      <InfoCard $delay='.2s' $url='/images/profile_image.webp'/>
+      <InfoCard $delay='.3s' $url='/images/profile_image.webp'/>
+      <InfoCard $delay='.4s' $url='/images/profile_image.webp'/>
     </InfoCardWrapper>
   );
 }
