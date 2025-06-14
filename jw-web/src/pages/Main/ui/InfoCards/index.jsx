@@ -52,7 +52,7 @@ const InfoCard = styled.button`
 const InfoCardOverLay = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
   border-radius: 20px;
   position: absolute;
   top: 0; left: 0;
@@ -73,14 +73,29 @@ const InfoCardTitle = styled.h1`
   line-height: 1.2em;
 `;
 
+const InfoCardFooter = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  z-index: 4;
+`;
+
+const InfoCardSubtitle = styled.h2`
+  color: #FAF9F6;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.2em;
+  text-align: right;
+`;
+
 const InfoCardArrow = styled.img`
   width: 1.7rem;
   aspect-ratio: 1;
   object-fit: cover;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 4;
 `;
 
 
@@ -93,21 +108,30 @@ export const InfoCards = () => {
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_projects')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        <InfoCardFooter>
+          <InfoCardSubtitle>{useBreakText('info_cards_projects_sub')}</InfoCardSubtitle>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.4s' $url='/images/info-cards/skills.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_skillsets')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        <InfoCardFooter>
+          <InfoCardSubtitle>{useBreakText('info_cards_skillsets_sub')}</InfoCardSubtitle>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.5s' $url='/images/info-cards/projects.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_criteria')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        <InfoCardFooter>
+          <InfoCardSubtitle>{useBreakText('info_cards_criteria_sub')}</InfoCardSubtitle>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+        </InfoCardFooter>
       </InfoCard>
     </InfoCardWrapper>
   );
