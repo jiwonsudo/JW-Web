@@ -49,7 +49,7 @@ export const Hero = () => {
   return (
     <Container>
       <div>
-        <Title $currLang={currLang}>{t('title_1')}<br/><GText>{t('title_2')}</GText>{t('title_3')}</Title>
+        <Title $currLang={currLang}>{t('hero_1')}<br/><GText>{t('hero_2')}</GText>{t('hero_3')}</Title>
       </div>
     </Container>
     );

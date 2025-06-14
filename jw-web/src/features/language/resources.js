@@ -4,9 +4,9 @@ export const resources = {
       nav_home: '홈',
       nav_about: '프로필',
       nav_showcase: '쇼케이스',
-      title_1: '정보는 명료하게.',
-      title_2: '경험',
-      title_3: '은 아름답게.'
+      hero_1: '정보는 명료하게.',
+      hero_2: '경험',
+      hero_3: '은 아름답게.'
 
     }
   },
@@ -15,9 +15,9 @@ export const resources = {
       nav_home: 'Home',
       nav_about: 'About',
       nav_showcase: 'Showcase',
-      title_1: 'Clarity of Insight.',
-      title_2: 'Delight',
-      title_3: ' in Sight.'
+      hero_1: 'Clarity of Insight.',
+      hero_2: 'Delight',
+      hero_3: ' in Sight.'
     }
   }
 };
