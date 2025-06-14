@@ -7,13 +7,13 @@ import { media } from '../../../shared/styles/mediaQuery';
 import { moveUpToAppear } from "./moveUpToAppear";
 
 const Container = styled.div`
-  /* width: 100%; */
   padding: 150px 0 150px 50px;
 
   ${media.mobile`
     padding: 150px 0 150px 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   `}
 `;
 
