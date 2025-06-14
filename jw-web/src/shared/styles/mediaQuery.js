@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 const breakpoints = {
-  mobile: 576,
+  mobile: 680,
 }
 
 export const media = Object.keys(breakpoints).reduce((acc, label) => {
