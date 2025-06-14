@@ -8,10 +8,10 @@ import { moveUpToAppear } from "./moveUpToAppear";
 
 const Container = styled.div`
   /* width: 100%; */
-  padding: 150px 0 120px 50px;
+  padding: 150px 0 150px 50px;
 
   ${media.mobile`
-    padding: 150px 0 100px 0;
+    padding: 150px 0 150px 0;
     display: flex;
     justify-content: center;
   `}
@@ -31,6 +31,16 @@ const Title = styled.h1`
   `}
 `;
 
+const SubTitle = styled.h2`
+  margin-top: 1em;
+  font-size: large;
+  font-weight: 500;
+  color: #7b8383;
+  opacity: 0;
+  animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
+  animation-delay: .2s;
+`;
+
 const GText = styled.p`
   font-weight: 700;
   background: linear-gradient(to right,
@@ -48,9 +58,8 @@ export const Hero = () => {
 
   return (
     <Container>
-      <div>
-        <Title $currLang={currLang}>{t('hero_1')}<br/><GText>{t('hero_2')}</GText>{t('hero_3')}</Title>
-      </div>
+      <Title $currLang={currLang}>{t('hero_1')}<br/><GText>{t('hero_2')}</GText>{t('hero_3')}</Title>
+      <SubTitle>{t('hero_subtitle')}</SubTitle>
     </Container>
     );
 };
