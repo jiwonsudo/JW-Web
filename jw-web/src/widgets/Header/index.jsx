@@ -1,4 +1,3 @@
-import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Container } from "./ui/Container";
@@ -10,21 +9,18 @@ import { LanguageToggleBtn } from './ui/LanguageToggleBtn';
 
 export const Header = () => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const isNavVisible = useHeaderVisibility(location.pathname);
+  const isNavVisible = useHeaderVisibility();
 
   return (
     <Container $isNavVisible={isNavVisible}>
       <LogoWrapper>
-        <Link to="/">
-          <LogoImage src='/images/header/logo_black.webp' alt="logo" />
-        </Link>
+          <LogoImage src='/images/header/logo.webp' alt="logo" />
       </LogoWrapper>
 
       <Navbar>
-        <Link to="/"><NavBtn>{t('nav_home')}</NavBtn></Link>
-        <Link to="/about"><NavBtn>{t('nav_about')}</NavBtn></Link>
-        <Link to="/showcase"><NavBtn>{t('nav_showcase')}</NavBtn></Link>
+        <NavBtn>{t('nav_home')}</NavBtn>
+        <NavBtn>{t('nav_about')}</NavBtn>
+        <NavBtn>{t('nav_showcase')}</NavBtn>
       </Navbar>
 
       <LanguageToggleBtn />

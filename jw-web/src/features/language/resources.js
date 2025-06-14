@@ -7,9 +7,9 @@ export const resources = {
       hero_1: '정보는 명료하게.',
       hero_2: '경험',
       hero_3: '은 아름답게.',
-      info_preview_projects: '손길을 거친\n프로젝트들',
-      info_preview_skillsets: '꾸준히 발전시켜 온\n기술 스택',
-      info_preview_criteria: '결정의 바탕이 되는\n기준들',
+      info_cards_projects: "'저'는 \n이런 사람입니다",
+      info_cards_skillsets: '이런 기술들을\n가지고 있어요',
+      info_cards_criteria: '이런 것들을\n만들었어요',
     }
   },
   en: {
@@ -20,9 +20,9 @@ export const resources = {
       hero_1: 'Clarity of Insight.',
       hero_2: 'Delight',
       hero_3: ' in Sight.',
-      info_preview_projects: "Projects\nI've worked on",
-      info_preview_skillsets: 'Ever-improving\ntechnology stack',
-      info_preview_criteria: 'Criteria\nfor decision-making',
+      info_cards_projects: "A little bit\nabout me",
+      info_cards_skillsets: 'My toolkit',
+      info_cards_criteria: "Things I've made",
     }
   }
 };

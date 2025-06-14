@@ -1,25 +1,15 @@
 import { useEffect, useState } from 'react';
 
-export const useHeaderVisibility = (pathname, delay = 3000) => {
+export const useHeaderVisibility = (delay = 200) => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
-  // 첫 방문 시 홈에서 3초 후 보여주기
   useEffect(() => {
-    if (pathname === '/') {
-      if (!sessionStorage.getItem('hasVisited')) {
-        setIsHeaderVisible(false);
-        setTimeout(() => {
-          setIsHeaderVisible(true);
-          sessionStorage.setItem('hasVisited', 'true');
-        }, delay);
-      } else {
+    setTimeout(() => {
         setIsHeaderVisible(true);
-      }
-    } else {
-      setIsHeaderVisible(true);
-    }
-  }, [pathname, delay]);
+        sessionStorage.setItem('hasVisited', 'true');
+      }, delay);
+  }, []);
 
   // 스크롤 방향 감지
   useEffect(() => {

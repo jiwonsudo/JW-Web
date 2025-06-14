@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-import { useBreakText } from '../../../features/language/useBreakText';
-import { moveUpToAppear } from "./moveUpToAppear";
-import { media } from "../../../shared/styles/mediaQuery";
+import { useBreakText } from '../../../../features/language/useBreakText';
+import { moveUpToAppear } from "./../moveUpToAppear";
+import { media } from "../../../../shared/styles/mediaQuery";
 
 const INFOCARD_GAP = 15;
 
@@ -24,16 +23,22 @@ const InfoCardWrapper = styled.div`
   `}
 `;
 
-const InfoCard = styled(Link)`
+const InfoCard = styled.button`
   width: calc((100% - (${INFOCARD_GAP}px * 2)) / 3);
   aspect-ratio: 1 / 1.6;
   background: url(${(props) => props.$url}) center;
   background-size: cover;
   border-radius: 20px;
+  border: none;
+  text-align: left;
   opacity: 0;
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
   animation-delay: ${(props) => props.$delay || '0'};
   position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   ${media.mobile`
     width: 100%;
@@ -55,8 +60,9 @@ const InfoCardOverLay = styled.div`
 `;
 
 const InfoCardTextBox = styled.div`
-  position: relative;
-  margin: 1rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   z-index: 3;
 `
 
@@ -78,30 +84,30 @@ const InfoCardArrow = styled.img`
 `;
 
 
-export const InfoPreview = () => {
+export const InfoCards = () => {
 
   return (
     <InfoCardWrapper>
-      <InfoCard to='/showcase' $delay='.2s' $url='/images/info-preview/projects.webp'>
+      <InfoCard $delay='.2s' $url='/images/info-cards/projects.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          <InfoCardTitle>{useBreakText('info_preview_projects')}</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_cards_projects')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
+        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
       </InfoCard>
-      <InfoCard to='/about' $delay='.3s' $url='/images/info-preview/skill_set.webp'>
+      <InfoCard $delay='.3s' $url='/images/info-cards/skill_set.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          <InfoCardTitle>{useBreakText('info_preview_skillsets')}</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_cards_skillsets')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
+        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
       </InfoCard>
-      <InfoCard to='/about' $delay='.4s' $url='/images/info-preview/core_values.webp'>
+      <InfoCard $delay='.4s' $url='/images/info-cards/core_values.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          <InfoCardTitle>{useBreakText('info_preview_criteria')}</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_cards_criteria')}</InfoCardTitle>
         </InfoCardTextBox>
-        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
+        <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
       </InfoCard>
     </InfoCardWrapper>
   );

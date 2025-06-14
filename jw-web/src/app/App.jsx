@@ -1,25 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import { Home } from "../pages/Home";
-import { About } from "../pages/About";
-import { Showcase } from "../pages/Showcase";
 import { GlobalStyle } from '../shared/styles/GlobalStyle';
 
 import { Header } from "../widgets/Header";
+import { Main } from "../pages/Main";
 
 
 function App() {
 
   return (
-    <BrowserRouter>
+    <>
       <GlobalStyle/>
       <Header/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/showcase" element={<Showcase/>}/>
-      </Routes>
-    </BrowserRouter>
+      <Main/>
+    </>
   );
 }
 
