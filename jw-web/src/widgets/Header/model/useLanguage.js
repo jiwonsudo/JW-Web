@@ -7,13 +7,8 @@ export const useLanguage = () => {
 
   useEffect(() => {
     i18n.changeLanguage(language);
+    localStorage.setItem('setLang_JW', language);
   }, [language, i18n]);
 
-  const toggleLanguage = () => {
-    const setLang = language === 'ko' ? 'en' : 'ko';
-    setLanguage(setLang);
-    localStorage.setItem('setLang_JW', setLang);
-  };
-
-  return { language, toggleLanguage };
+  return { setLanguage };
 };
