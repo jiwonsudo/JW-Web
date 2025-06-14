@@ -36,8 +36,11 @@ const InfoCard = styled.button`
   animation-delay: ${(props) => props.$delay || '0'};
   position: relative;
 
+  transition: transform .1s ease-out, box-shadow 0.3s ease-out;
+
   &:hover {
     cursor: pointer;
+    box-shadow: 0 0 15px #3b3e4b;
   }
 
   ${media.mobile`
@@ -107,10 +110,10 @@ export const InfoCards = () => {
       <InfoCard $delay='.3s' $url='/images/info-cards/about.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          <InfoCardTitle>{useBreakText('info_cards_projects')}</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_cards_about')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardFooter>
-          <InfoCardSubtitle>{useBreakText('info_cards_projects_sub')}</InfoCardSubtitle>
+          <InfoCardSubtitle>{useBreakText('info_cards_about_sub')}</InfoCardSubtitle>
           <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
         </InfoCardFooter>
       </InfoCard>
@@ -127,10 +130,10 @@ export const InfoCards = () => {
       <InfoCard $delay='.5s' $url='/images/info-cards/projects.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          <InfoCardTitle>{useBreakText('info_cards_criteria')}</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_cards_showcase')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardFooter>
-          <InfoCardSubtitle>{useBreakText('info_cards_criteria_sub')}</InfoCardSubtitle>
+          <InfoCardSubtitle>{useBreakText('info_cards_showcase_sub')}</InfoCardSubtitle>
           <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
         </InfoCardFooter>
       </InfoCard>
