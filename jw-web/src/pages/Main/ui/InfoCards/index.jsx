@@ -90,6 +90,7 @@ const InfoCardSubtitle = styled.h2`
   font-weight: 500;
   line-height: 1.2em;
   text-align: right;
+  word-break: keep-all;
 `;
 
 const InfoCardArrow = styled.img`
