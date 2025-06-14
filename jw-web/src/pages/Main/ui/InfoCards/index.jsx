@@ -88,21 +88,21 @@ export const InfoCards = () => {
 
   return (
     <InfoCardWrapper>
-      <InfoCard $delay='.2s' $url='/images/info-cards/projects.webp'>
+      <InfoCard $delay='.2s' $url='/images/info-cards/about.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_projects')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
       </InfoCard>
-      <InfoCard $delay='.3s' $url='/images/info-cards/skill_set.webp'>
+      <InfoCard $delay='.3s' $url='/images/info-cards/skills.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_skillsets')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
       </InfoCard>
-      <InfoCard $delay='.4s' $url='/images/info-cards/core_values.webp'>
+      <InfoCard $delay='.4s' $url='/images/info-cards/projects.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_criteria')}</InfoCardTitle>
