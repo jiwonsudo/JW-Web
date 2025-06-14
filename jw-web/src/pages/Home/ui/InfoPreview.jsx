@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import { useBreakText } from '../../../features/language/useBreakText';
 import { moveUpToAppear } from "./moveUpToAppear";
 import { media } from "../../../shared/styles/mediaQuery";
 
@@ -67,32 +67,41 @@ const InfoCardTitle = styled.h1`
   line-height: 1.2em;
 `;
 
+const InfoCardArrow = styled.img`
+  width: 1.7rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 4;
+`;
+
 
 export const InfoPreview = () => {
-  const { t } = useTranslation();
 
   return (
     <InfoCardWrapper>
       <InfoCard to='/showcase' $delay='.2s' $url='/images/info-preview/projects.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          {/* Todo: 임시 텍스트 */}
-          <InfoCardTitle>손길을 거친<br/>프로젝트들</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_preview_projects')}</InfoCardTitle>
         </InfoCardTextBox>
+        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
       </InfoCard>
       <InfoCard to='/about' $delay='.3s' $url='/images/info-preview/skill_set.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          {/* Todo: 임시 텍스트 */}
-          <InfoCardTitle>꾸준히 발전시켜 온<br/>기술들</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_preview_skillsets')}</InfoCardTitle>
         </InfoCardTextBox>
+        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
       </InfoCard>
       <InfoCard to='/about' $delay='.4s' $url='/images/info-preview/core_values.webp'>
         <InfoCardOverLay/>
         <InfoCardTextBox>
-          {/* Todo: 임시 텍스트 */}
-          <InfoCardTitle>결정의 바탕이 되는<br/>기준들</InfoCardTitle>
+          <InfoCardTitle>{useBreakText('info_preview_criteria')}</InfoCardTitle>
         </InfoCardTextBox>
+        <InfoCardArrow src="/public/images/info-preview/arrow-top-right.svg"/>
       </InfoCard>
     </InfoCardWrapper>
   );
