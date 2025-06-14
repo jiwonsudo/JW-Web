@@ -26,8 +26,8 @@ const Title = styled.h1`
   opacity: 0;
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
 
-  ${({ $currLang }) => media.mobile`
-    font-size: ${$currLang === 'en' ? 'x-large' : 'xx-large'};
+  ${media.mobile`
+    font-size: xx-large;
   `}
 `;
 
