@@ -142,7 +142,7 @@ export const InfoCards = () => {
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_about_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
+          <InfoCardArrow src="/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.4s' $url='/images/info-cards/skills.webp'>
@@ -152,7 +152,7 @@ export const InfoCards = () => {
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_skillsets_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
+          <InfoCardArrow src="/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.5s' $url='/images/info-cards/projects.webp'>
@@ -162,7 +162,7 @@ export const InfoCards = () => {
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_showcase_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
+          <InfoCardArrow src="/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
     </InfoCardWrapper>
