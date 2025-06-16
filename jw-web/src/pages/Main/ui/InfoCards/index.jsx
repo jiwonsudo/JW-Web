@@ -35,12 +35,40 @@ const InfoCard = styled.button`
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
   animation-delay: ${(props) => props.$delay || '0'};
   position: relative;
+  overflow: hidden;
 
   transition: transform .1s ease-out, box-shadow 0.3s ease-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    pointer-events: none;
+
+    /* when hover-in */
+    transition: opacity 0.1s ease-out;
+  }
 
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 15px #3b3e4b;
+  }
+
+  &:hover:before {
+    left: 125%;
+    opacity: 1;
+    /* when hover-out */
+    transition: left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.1s ease-out;
   }
 
   ${media.mobile`
@@ -108,33 +136,33 @@ export const InfoCards = () => {
   return (
     <InfoCardWrapper>
       <InfoCard $delay='.3s' $url='/images/info-cards/about.webp'>
-        <InfoCardOverLay/>
+        <InfoCardOverLay />
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_about')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_about_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.4s' $url='/images/info-cards/skills.webp'>
-        <InfoCardOverLay/>
+        <InfoCardOverLay />
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_skillsets')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_skillsets_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
       <InfoCard $delay='.5s' $url='/images/info-cards/projects.webp'>
-        <InfoCardOverLay/>
+        <InfoCardOverLay />
         <InfoCardTextBox>
           <InfoCardTitle>{useBreakText('info_cards_showcase')}</InfoCardTitle>
         </InfoCardTextBox>
         <InfoCardFooter>
           <InfoCardSubtitle>{useBreakText('info_cards_showcase_sub')}</InfoCardSubtitle>
-          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg"/>
+          <InfoCardArrow src="/public/images/info-cards/arrow-top-right.svg" />
         </InfoCardFooter>
       </InfoCard>
     </InfoCardWrapper>
