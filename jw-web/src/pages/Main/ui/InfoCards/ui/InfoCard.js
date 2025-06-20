@@ -35,8 +35,10 @@ const InfoCard = styled.button`
   animation-delay: ${(props) => props.$delay || '0'};
   position: relative;
   overflow: hidden;
+  scale: ${(props) => props.$scale || '1'};
+  z-index: ${(props) => props.$scale ? '1' : '2'};
 
-  transition: transform .1s ease-out, box-shadow 0.3s ease-out;
+  transition: ${(props) => props.$scale ? 'none' : 'transform .1s ease-out, box-shadow 0.3s ease-out'};
 
   &:before {
     content: '';
@@ -55,19 +57,19 @@ const InfoCard = styled.button`
     pointer-events: none;
 
     /* when hover-in */
-    transition: opacity 0.1s ease-out;
+    transition: ${(props) => props.$scale ? 'none' : 'opacity 0.1s ease-out'};
   }
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 15px #3b3e4b;
+    box-shadow: ${(props) => props.$scale ? 'none' : '0 0 15px #3b3e4b'};
   }
 
   &:hover:before {
     left: 125%;
     opacity: 1;
     /* when hover-out */
-    transition: left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.1s ease-out;
+    transition: ${(props) => props.$scale ? 'none' : 'left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.1s ease-out'};
   }
 
   ${media.mobile`
@@ -116,7 +118,7 @@ const InfoCardFooter = styled.div`
 
 const InfoCardSubtitle = styled.h2`
   color: #FAF9F6;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   line-height: 1.2em;
   text-align: right;

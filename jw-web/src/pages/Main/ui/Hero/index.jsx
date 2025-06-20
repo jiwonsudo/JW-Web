@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import i18n from "../../../features/language/i18n";
+import i18n from "../../../../features/language/i18n";
 
-import { media } from '../../../shared/styles/mediaQuery';
+import { media } from '../../../../shared/styles/mediaQuery';
 
-import { moveUpToAppear } from "./moveUpToAppear";
+import { moveUpToAppear } from "../moveUpToAppear";
 
 const Container = styled.div`
   padding: 150px 0 150px 50px;
