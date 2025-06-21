@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { moveUpToAppear } from "../../moveUpToAppear";
 import { media } from "../../../../../shared/styles/mediaQuery";
 
-const INFOCARD_GAP = 15;
+const INFOCARD_MIN_GAP = 20;
 
 const InfoCardWrapper = styled.div`
   width: 90%;
@@ -12,18 +12,22 @@ const InfoCardWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: ${INFOCARD_GAP}px;
+  gap: 5%;
 
+  ${media.tablet`
+    gap: ${INFOCARD_MIN_GAP}px;
+  `}
   ${media.mobile`
     width: 80%;
     flex-direction: column;
     align-items: center;
-    gap: ${INFOCARD_GAP}px;
+    gap: ${INFOCARD_MIN_GAP}px;
   `}
 `;
 
 const InfoCard = styled.button`
-  width: calc((100% - (${INFOCARD_GAP}px * 2)) / 3);
+  width: 30%;
+  max-width: 360px;
   aspect-ratio: 1 / 1.6;
   background: url(${(props) => props.$url}) center;
   background-size: cover;
@@ -77,7 +81,7 @@ const InfoCard = styled.button`
     aspect-ratio: 2 / 1;
     flex-direction: column;
     align-items: center;
-    gap: ${INFOCARD_GAP}px;
+    gap: ${INFOCARD_MIN_GAP}px;
   `}
 `;
 
@@ -93,16 +97,32 @@ const InfoCardOverLay = styled.div`
 
 const InfoCardTextBox = styled.div`
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 1.5rem;
+  left: 1.5rem;
   z-index: 3;
+
+  ${media.tablet`
+    top: 1rem;
+    left: 1rem;
+  `}
+  ${media.mobile`
+    top: 1rem;
+    left: 1rem;
+  `}
 `
 
 const InfoCardTitle = styled.h1`
   color: #FAF9F6;
-  font-size: x-large;
+  font-size: 1.7rem;
   font-weight: 600;
   line-height: 1.2em;
+
+  ${media.tablet`
+    font-size: 1.4rem;
+  `}
+  ${media.mobile`
+    font-size: 1.4rem;
+  `}
 `;
 
 const InfoCardFooter = styled.div`

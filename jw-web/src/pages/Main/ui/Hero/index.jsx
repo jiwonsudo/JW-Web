@@ -7,7 +7,11 @@ import { media } from '../../../../shared/styles/mediaQuery';
 import { moveUpToAppear } from "../moveUpToAppear";
 
 const Container = styled.div`
-  padding: 150px 0 150px 50px;
+  padding: 150px 0 200px 10vw;
+
+  ${media.tablet`
+    padding: 150px 0 150px 10vw;
+  `}
 
   ${media.mobile`
     padding: 150px 0 150px 0;
@@ -18,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: xxx-large;
+  font-size: 4rem;
   font-weight: 700;
   color: #0e1111;
   line-height: 120%;
@@ -26,19 +30,30 @@ const Title = styled.h1`
   opacity: 0;
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
 
+  ${media.tablet`
+    font-size: 3rem;
+  `}
+
   ${media.mobile`
-    font-size: xx-large;
+    font-size: 2.5rem;
   `}
 `;
 
 const SubTitle = styled.h2`
-  margin-top: 1em;
-  font-size: large;
+  margin-top: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #7b8383;
   opacity: 0;
   animation: ${moveUpToAppear} .5s cubic-bezier(.46,-0.04,.48,1) forwards;
   animation-delay: .2s;
+
+  ${media.tablet`
+    font-size: 1.2rem;
+  `}
+  ${media.mobile`
+    font-size: 1rem;
+  `}
 `;
 
 const GText = styled.p`
